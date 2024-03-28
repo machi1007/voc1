@@ -65,10 +65,16 @@
                 flex-direction: column;
             }
 
-            #word-list-container {
-                width: 100%;
-                max-width: none;
-            }
+#word-list-container {
+    width: 80%;
+    max-width: 600px;
+    max-height: 70vh; /* 新增：設定最大高度 */
+    overflow: auto; /* 新增：超出部分滾動 */
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
         }
     </style>
 </head>
