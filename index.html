@@ -3,49 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>大樹單字庫</title>
+    <title>Responsive Vocabulary List</title>
     <style>
         
 body {
-    display: flex;
-    justify-content: center; /* 水平居中 */
-    align-items: flex-start; /* 避免內容被剪裁 */
-    min-height: 100vh;
-    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f0f0;
     margin: 0;
-}
-
-#word-list-container {
-    width: 90%; /* Adjust the width to a percentage of the viewport width */
-    max-width: 1200px; /* Increase max-width to allow the container to be wider on larger screens */
-    min-width: 300px; /* Optional: Ensure the container doesn't get too narrow on smaller screens */
-    background-color: #fff;
-    padding: 20px;
-    margin: 20px auto; /* Maintain centering and add vertical margin */
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 0;
     display: flex;
-    flex-direction: column;
-    align-items: center; /* Align items to center for consistency */
+    justify-content: center;
+    align-items: flex-start; /* 更改自 'center' 至 'flex-start' */
+    min-height: 100vh; /* 從 'height: 100vh;' 更改至 'min-height: 100vh;' */
+    color: #333;
 }
 
-.word-item {
-    width: 90%; /* 給定一個寬度，以便在容器中擴展 */
-    min-height: 30px; /* 可以根據需要調整，確保即使內容少時也有基本的高度 */
-    margin-bottom: 8px;
-    padding: 0.5px 20px; /* 根據需要調整 */
-    border-left: 5px solid #3f51b5;
-    background-color: #e8eaf6;
-    border-radius: 5px;
-    display: flex;
-    justify-content: space-between; /* 確保內容分布均勻 */
-    align-items: center; /* 垂直居中 */
-}
-
-.word-item:hover {
-    transform: scale(1.02);
-    background-color: #c5cae9;
-}
+        #word-list-container {
+            width: 80%;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
 
         h2 {
             text-align: center;
@@ -53,6 +32,22 @@ body {
             margin-bottom: 20px;
         }
 
+        .word-item {
+            background-color: #e8eaf6;
+            border-left: 5px solid #3f51b5;
+            margin-bottom: 8px;
+            padding: 0.1px 20px;
+            border-radius: 5px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: transform 0.2s ease-in-out;
+        }
+
+        .word-item:hover {
+            transform: scale(1.02);
+            background-color: #c5cae9;
+        }
 
         .word-item:last-child {
             margin-bottom: 0;
@@ -70,21 +65,33 @@ body {
                 flex-direction: column;
             }
             
+#word-list-container {
+    width: 80%;
+    max-width: 600px;
+    max-height: 70vh; /* Set maximum height */
+    overflow: auto; /* Enable scrolling for overflow content */
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
             
         }
     </style>
 </head>
 <body>
 
-<div id="content-wrapper">
-    <div id="word-list-container">
-        <h2>大樹單字庫(20240328)</h2>
-        <div id="word-list"></div>
-    </div>
+<div id="word-list-container">
+    <h2>大樹單字庫20240328</h2>
+    <div id="word-list"></div>
 </div>
 
 <script>
-    const wordsString = `descriptive; inferential; numerical; graphical; tabular; experiment; individuals; branches; distributions; dispersion; quartiles; interquartile range; variance; standard deviation; 3M mean median mode; arithmetic average; central tendency; symmetric distribution; skewed distribution; pros and cons; Rules of Thumb; heterogeneity; deriving; procedures; agglomerative; divisive; significant; semicolon;`; // Your words and phrases here, separated by semicolons
+    const wordsString = `
+    
+    descriptive; inferential; numerical; graphical; tabular; experiment; individuals; branches; distributions; dispersion; quartiles; interquartile range; variance; standard deviation; 3M mean median mode; arithmetic average; central tendency; symmetric distribution; skewed distribution; pros and cons; Rules of Thumb; heterogeneity; deriving; procedures; agglomerative; divisive; significant; semicolon;
+    
+    `; // Your words and phrases here, separated by semicolons
     const words = wordsString.split(';').filter(Boolean); // Use semicolon as separator
 
     function renderWords() {
