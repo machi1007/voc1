@@ -75,12 +75,16 @@
 <body>
 
 <div id="word-list-container">
-    <h2>大樹詞語庫20240328</h2>
+    <h2>大樹單字庫20240328</h2>
     <div id="word-list"></div>
 </div>
 
 <script>
-    const wordsString = `apple; banana; cat; dog; eraser; frog; gap; house; 魂不附體:驚嚇過度而心不能自主;`; // Your words and phrases here, separated by semicolons
+    const wordsString = `
+    
+    descriptive; inferential; numerical; graphical; tabular; experiment; individuals; branches; distributions; dispersion; quartiles; interquartile range; variance; standard deviation; 3M mean median mode; arithmetic average; central tendency; symmetric distribution; skewed distribution; pros and cons; Rules of Thumb; heterogeneity; deriving; procedures; agglomerative; divisive; significant;
+    
+    `; // Your words and phrases here, separated by semicolons
     const words = wordsString.split(';').filter(Boolean); // Use semicolon as separator
 
     function renderWords() {
